@@ -104,6 +104,7 @@ const init = async () => {
 
       // Integration initialized
       INTEGRATION.initialized = true;
+      EVENTS.emit("initIntegration");
 
       // Register global events
       EVENTS.on("updateApp", updateApp);
@@ -1636,4 +1637,8 @@ const initHeartbeat = () => {
 module.exports = {
   init,
   update,
+  removeConfig,
+  publishConfig,
+  publishAttributes,
+  publishState,
 };
